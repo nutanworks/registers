@@ -9,7 +9,7 @@ app.use(express.static('public'))
 app.use(bodyparser.urlencoded({
     extended:true
 }))
-mongoose.connect('mongodb+srv://repo:admin123@mynewclust.zhsukez.mongodb.net/')
+mongoose.connect('mongodb+srv://repo:admin123@mynewclust.zhsukez.mongodb.net/?retryWrites=true&w=majority&appName=mynewclust')
 var db=mongoose.connection
 db.on('error',()=> console.log("error in connecting to database"))
 db.once('open',()=> console.log("Connected to Database"))
