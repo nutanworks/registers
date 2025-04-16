@@ -8,8 +8,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    animation: fadeIn 1.2s ease-in;
+    animation: fadeIn 0.3s ease-in;
 }
+
 body::after {
     content: '';
     position: fixed;
@@ -17,11 +18,14 @@ body::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); 
-    backdrop-filter: blur(8px); /* Apply blur effect */
+    background: rgba(0, 0, 0, 0.6);
+    /* Slightly darker overlay */
+    backdrop-filter: blur(10px) contrast(1.2);
+    /* Sharpen and blur effect */
     z-index: -1;
 }
 
+/* Flex Container */
 .form-container {
     display: flex;
     justify-content: center;
@@ -30,75 +34,116 @@ body::after {
     width: 100%;
 }
 
+/* Form Card Styles */
 .form-card {
-    background: #ffffff;
-    padding: 40px 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.9);
+    /* Transparent white */
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    /* Depth effect */
     text-align: center;
-    width: 400px;
-    animation: popIn 1s ease-in-out;
+    width: 450px;
+    animation: popIn 1.5s ease-in-out;
+    transition: transform 0.2s ease, background-color 0.1s ease;
+}
+
+.form-card:hover {
+    background: rgba(255, 255, 255, 1);
+    /* Sharpen hover effect */
+
 }
 
 h1 {
-    color: #333;
-    margin-bottom: 20px;
-    font-size: 24px;
+    color: #222;
+    margin-bottom: 25px;
+    font-size: 28px;
     font-weight: bold;
 }
 
-/* Form Input Styles */
+/* Input Styles */
 .form-input {
     width: 90%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 2px solid #3f4043;
-    border-radius: 5px;
+    padding: 14px;
+    margin: 12px 0;
+    border: 2px solid #3a3b3c;
+    border-radius: 8px;
     outline: none;
     font-size: 16px;
-    background: #f1faff;
-    transition: all 0.3s ease;
+    background: #eef3ff;
+    /* Soft blue tint */
+    transition: all 0.3s ease-in-out;
 }
 
 .form-input:focus {
-    border-color: #66a6ff;
-    box-shadow: 0 0 5px #66a6ff;
+    border-color: #3ca8ff;
+    box-shadow: 0 0 8px #3ca8ff;
+    background: #e5f3ff;
 }
 
-/* Submit Button Styles */
+/* Button Styles */
 .form-button {
-    padding: 12px 40px;
-    background: #19b1f2;
-    color: #fff;
+    padding: 14px 45px;
+    background: linear-gradient(to right, #0062ff, #003cbf);
+    /* Gradient button */
+    color: #ffffff;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    margin-top: 25px;
 }
 
 .form-button:hover {
-    background: #333;
-    transform: translateY(-3px);
+    background: linear-gradient(to right, rgb(4, 232, 244),rgb(109, 3, 248));
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    
 }
 
 .form-button:active {
-    transform: scale(0.95);
+    transform: scale(0.94);
+    background: #002080;
 }
 
+/* Additional Container for Visual Appeal */
 .container2 {
-    background-color: #2a2a2b;
-    border-radius: 25px;
-    padding: 40px;
+    background-color: rgba(42, 42, 43, 0.9);
+    /* Transparent dark background */
+    border-radius: 30px;
+    padding: 50px;
     text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    /* Adds depth */
     position: relative;
-
 }
 
 .container2 h1 {
-    color: #f1faff;
-    font-size: 3rem;
-    margin-bottom: 40px;
+    color: #f9faff;
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 45px;
 }
 
+/* Subtle Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
