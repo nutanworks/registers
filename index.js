@@ -9,26 +9,26 @@ app.use(express.static('public'))
 app.use(bodyparser.urlencoded({
     extended:true
 }))
-mongoose.connect('mongodb://localhost:27017/Database')
+mongoose.connect('mongodb+srv://repo:admin123@mynewclust.zhsukez.mongodb.net/')
 var db=mongoose.connection
 db.on('error',()=> console.log("error in connecting to database"))
 db.once('open',()=> console.log("Connected to Database"))
 
 app.post("/sign_up",(req,res) =>{
     var name = req.body.name
-    var age = req.body.age
-    var email = req.body.email
-    var phno = req.body.phno
-    var gender =req.body.gender
-    var regno =req.body.regno
+    var branch = req.body.branch
+    var semester = req.body.semester
+    var regno = req.body.regno
+    var email =req.body.email
+    var feedback =req.body.feedback
 
     var data={
         "name":name,
-        "age":age,
+        "branch":branch,
+        "semester":semester,
+        "regno":regno,
         "email":email,
-        "phno":phno,
-        "gender":gender,
-        "regno":regno
+        "feedback":feedback
     }
     db.collection('users').insertOne(data,(err,colection)=>{
         if(err){
@@ -44,6 +44,6 @@ app.get("/",(req,res) => {
         "Allow-acces-Allow-Origin":'*'
     })
     return res.redirect('index.html')
-}).listen(3000);
+}).listen(3070);
 
-console.log("Listening on port 3000")
+console.log("Listening on port 3070")

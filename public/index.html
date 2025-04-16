@@ -3,34 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-mod-3">
-
-            </div>
-            <div class="col-md-6 main">
-                <form action="/sign_up" method="POST">
-                    <h2> Reistration Form</h2>
-                    <input type="text" class="box" id="name" name="name" placeholder="Name" required/>
-                    <br>
-                    <input type="text" class="box" id="age" name="age" placeholder="Age" required/>
-                    <br>
-                    <input type="text" class="box" id="email" name="email" placeholder="Email" required/>
-                    <br>
-                    <input type="text" class="box" id="phno" name="phno" placeholder="Mobile" required/>
-                    <br>
-                    <input type="text" class="box" id="gender" name="gender" placeholder="Gender" required/>
-                    <br>
-                    <input type="text" class="box" id="regno" name="regno" placeholder="Register-no" required/>
-                    <br>
-                    <a href="Desktop\Study Matririals\index.html"><input type="submit" value="submit" id="submit"/></a>
-
-                </form>
-            </div>
+        <div class="form-card">
+            <h1>Registration Form</h1>
+            <form action="/sign_up" method="POST">
+                <!-- Name Field -->
+                <input type="text" class="form-input" id="name" name="name" placeholder="Name" required />
+                
+                <!-- Branch Dropdown -->
+                <select id="branch" name="branch" class="form-input" required>
+                    <option value="" disabled selected>Select Branch</option>
+                    <option value="cs">Computer Science (CS)</option>
+                    <option value="ec">Electronics (EC)</option>
+                    <option value="me">Mechanical (ME)</option>
+                    <option value="ce">Civil (CE)</option>
+                </select>
+                
+                <!-- Semester Field -->
+                <input type="text" class="form-input" id="semester" name="semester" placeholder="Semester (e.g, 1st,2nd)" required />
+                
+                <!-- Register Number Field -->
+                <input type="text" class="form-input" id="regno" name="regno" placeholder="Register Number" required />
+                
+                <!-- Email Field -->
+                <input type="email" class="form-input" id="email" name="email" placeholder="Email" required />
+                
+                <!-- Feedback Field -->
+                <textarea class="form-input" id="feedback" name="feedback" placeholder="Your Feedback" rows="4" required></textarea>
+                
+                <!-- Submit Button -->
+                <button type="submit" class="form-button">Submit</button>
+            </form>
         </div>
     </div>
 </body>
